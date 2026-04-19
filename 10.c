@@ -1,24 +1,37 @@
 #include <stdio.h>
 
 int main() {
-    int arr[] = {6,4,2,1,8,3};
-    int n = 6;
+    int arr[100], n;
 
-    for(int i=0;i<n-1;i++) {
-        if(i%2==0 && arr[i] > arr[i+1]) {
-            int temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
-        }
-        if(i%2==1 && arr[i] < arr[i+1]) {
-            int temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Rearranging
+    for(int i = 0; i < n - 1; i++) {
+        if(i % 2 == 0) {
+            if(arr[i] > arr[i + 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        } else {
+            if(arr[i] < arr[i + 1]) {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
         }
     }
 
-    for(int i=0;i<n;i++)
+    printf("Rearranged array:\n");
+    for(int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
+    }
 
     return 0;
 }
