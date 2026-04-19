@@ -1,0 +1,20 @@
+File handling in C is used to store data permanently in files instead of losing it after program execution.
+
+Steps:
+1. Declare file pointer
+2. Open file (fopen())
+3. Read/Write data
+4. Close file (fclose())
+File Pointer
+FILE *fp;
+Modes:
+1 r - read
+2. w - write
+3. a - append
+Important Functions:
+fopen() - opens file
+fclose() - closes file
+fprintf() - writes data
+fscanf() - reads data
+fgetc()/fputc() - character operations
+fgets()/fputs() - string operations
